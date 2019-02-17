@@ -1,19 +1,23 @@
 import sys
 import datetime as dt
+import pandas as pd
+import numpy
+from numpy import array
 
-gp_year = []
+gp_name = sys.argv[1]
 
 if len(sys.argv)<3:	
 	today = dt.date.today()
 	gp_year = today.strftime('%Y')
+else:
+	gp_year = sys.argv[2] 
 		
-gp_name = sys.argv[1]
+table = pd.read_html("https://www.statsf1.com/en/" +gp_year+ "/" +gp_name+ "/classement.aspx", attrs = {'id': 'ctl00_CPH_Main_GV_Stats'})[0]
 
-print(gp_name)
-print(gp_year)
-
-url = 'https://www.statsf1.com/en/'+gp_year+'/'+gp_name+'/classement.aspx'
-
+# print(table.shape)
+print(table.iloc[0:20,:])
+# table = table[1:2,1:2]
+# print(table)
 
 
 
