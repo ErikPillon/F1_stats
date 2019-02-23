@@ -18,7 +18,8 @@ table = pd.read_html("https://www.statsf1.com/en/" +gp_year+ "/" +gp_name+ "/cla
 print(table.iloc[0:20,:])
 # table = table[1:2,1:2]
 # print(table)
-
+file_output = ['data_'+gp_year+'_'+gp_name+'.csv']
+pd.to_csv(file_output)
 
 
 
