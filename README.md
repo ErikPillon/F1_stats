@@ -10,4 +10,6 @@ Python Scripts for the automatic collection of F1 stats
 - ...
 - _Many other features coming soon!_
 
-
+## To Do
+- [ ] Add a dictionary for converting the names of the GPs from english to french
+ 
